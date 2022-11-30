@@ -1,0 +1,23 @@
+<button class="btn btn-primary" [disabled]="!check" (click)="onCreateServer()">
+  Add server
+</button>
+
+<p [innerText]="check">{{ check }}</p>
+
+<span> {{ serverStatus }} </span>
+
+<hr />
+<hr />
+
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+
+<div>
+  <input type="text" class="form-control" [(ngModel)]="serverEvent" />
+</div>
+
+<p>{{ serverEvent }}</p>
+
+<hr />
+<hr />
+<hr />
+<hr />
