@@ -3,21 +3,18 @@
 </button>
 
 <p [innerText]="check">{{ check }}</p>
-
-<span> {{ serverStatus }} </span>
-
-<hr />
-<hr />
-
 <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
 
 <div>
   <input type="text" class="form-control" [(ngModel)]="serverEvent" />
 </div>
 
-<p>{{ serverEvent }}</p>
+<div *ngFor="let service of servers">
+  <span *ngIf="serverCreated; else noServer">
+    {{ serverStatus }}
+  </span>
+</div>
 
-<hr />
-<hr />
-<hr />
-<hr />
+<ng-template #noServer>
+  <p>No server was created</p>
+</ng-template>

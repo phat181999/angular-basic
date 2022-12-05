@@ -1,0 +1,17 @@
+<button (click)="handleShowSecrect()">Display Details</button>
+<p *ngIf="showDetail">directives works!</p>
+<p
+  *ngFor="let count of log"
+  [ngStyle]="{ backgroundColor: count > 5 ? 'blue' : 'green' }"
+  [ngClass]="{ text: count > 5 ? 'text' : null }"
+>
+  {{ count }}
+</p>
+
+<p
+  *ngFor="let d of day; let index = index"
+  [ngStyle]="{ backgroundColor: index > 5 ? 'blue' : 'green' }"
+  [ngClass]="{ text: index > 5 ? 'text' : null }"
+>
+  {{ d }}
+</p>
